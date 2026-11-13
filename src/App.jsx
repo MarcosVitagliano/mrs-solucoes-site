@@ -566,4 +566,4 @@ export default function App() {
                 items: [
                   'Landing pages de alta conversão e SEO otimizado',
                   'Portais corporativos e plataformas marketplace',
-                  'Dashboards interativos responsivos em React +
+                  'Dashboards interativos responsivos em React + Tailwind', 
