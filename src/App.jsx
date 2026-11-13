@@ -1,35 +1,47 @@
 import React, { useState, useRef } from 'react';
 import {
-  Code2,
-  Cpu,
-  Database,
-  Globe,
-  Layers,
-  Terminal,
-  Sparkles,
-  ArrowRight,
-  CheckCircle2,
-  TrendingUp,
-  Briefcase,
-  Github,
-  Linkedin,
-  Instagram,
-  Mail,
-  MessageSquare,
-  Play,
-  Pause,
-  Volume2,
-  VolumeX,
-  RefreshCw,
-  ExternalLink,
-  Heart,
-  MessageCircle,
-  X,
-  SlidersHorizontal,
-  ShieldCheck,
-  Zap,
-  BarChart3
+    Code2,
+    Cpu,
+    Database,
+    Globe,
+    Layers,
+    Terminal,
+    Sparkles,
+    ArrowRight,
+    CheckCircle2,
+    TrendingUp,
+    Briefcase,
+    Mail,
+    MessageSquare,
+    Play,
+    Pause,
+    Volume2,
+    VolumeX,
+    RefreshCw,
+    ExternalLink,
+    Heart,
+    MessageCircle,
+    X,
+    SlidersHorizontal,
+    ShieldCheck,
+    Zap,
+    BarChart3
 } from 'lucide-react';
+
+const Github = ({ className = 'w-5 h-5' }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+        <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
+);
+
+const Instagram = ({ className = 'w-5 h-5' }) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+);
 
 export default function App() {
   // Estados do Player de Vídeo na Hero Section
@@ -567,3 +579,568 @@ export default function App() {
                   'Landing pages de alta conversão e SEO otimizado',
                   'Portais corporativos e plataformas marketplace',
                   'Dashboards interativos responsivos em React + Tailwind', 
+
+                                  'Integração nativa com WhatsApp, CRM e APIs REST'
+                              ],
+                              accent: 'cyan'
+                          },
+                          {
+                              icon: Layers,
+                              title: 'Customização Odoo 19 & ERP',
+                              subtitle: 'Eficiência operacional e fiscal',
+                              items: [
+                                  'Desenvolvimento de módulos em Python e XML',
+                                  'Rotinas de conciliação bancária e validação de faturas',
+                                  'Modelagem e otimização de consultas PostgreSQL / SQL',
+                                  'Integração entre ERPs e sistemas externos'
+                              ],
+                              accent: 'emerald'
+                          },
+                          {
+                              icon: Zap,
+                              title: 'Automações Python & IA',
+                              subtitle: 'Escala sem aumentar equipe',
+                              items: [
+                                  'Agentes inteligentes conectados a documentos e bancos de dados',
+                                  'Web scraping e extração estruturada de leads e dados',
+                                  'Automação de relatórios financeiros e DRE gerencial',
+                                  'Scripts quantitativos e rotinas agendadas'
+                              ],
+                              accent: 'indigo'
+                          }
+                      ].map((service, idx) => {
+                          const Icon = service.icon;
+                          return (
+                              <div
+                                  key={idx}
+                                  className="rounded-2xl bg-slate-950 border border-slate-800 p-7 flex flex-col justify-between hover:border-slate-700 transition-all"
+                              >
+                                  <div>
+                                      <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 mb-5">
+                                          <Icon className="w-6 h-6" />
+                                      </div>
+                                      <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                                      <p className="text-xs text-cyan-400 font-medium mt-1 mb-5">
+                                          {service.subtitle}
+                                      </p>
+                                      <ul className="space-y-3 text-sm text-slate-300">
+                                          {service.items.map((item, i) => (
+                                              <li key={i} className="flex items-start gap-2.5">
+                                                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                                  <span>{item}</span>
+                                              </li>
+                                          ))}
+                                      </ul>
+                                  </div>
+
+                                  <div className="pt-6 mt-6 border-t border-slate-800/80">
+                                      <a
+                                          href="#contato"
+                                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
+                                      >
+                                          <span>Solicitar escopo</span>
+                                          <ArrowRight className="w-4 h-4" />
+                                      </a>
+                                  </div>
+                              </div>
+                          );
+                      })}
+                  </div>
+              </div>
+          </section>
+
+          {/* PORTFÓLIO DE PROJETOS */}
+          <section id="projetos" className="py-20 border-b border-slate-800/60">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                      <div>
+                          <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">
+                              Portfólio Selecionado
+                          </span>
+                          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">
+                              Projetos e Entregas Realizadas
+                          </h2>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                          {categories.map((cat) => (
+                              <button
+                                  key={cat}
+                                  type="button"
+                                  onClick={() => setActiveCategory(cat)}
+                                  className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${activeCategory === cat
+                                          ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20'
+                                          : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                                      }`}
+                              >
+                                  {cat}
+                              </button>
+                          ))}
+                      </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {filteredProjects.map((project) => (
+                          <div
+                              key={project.id}
+                              className="group rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/50 p-6 flex flex-col justify-between transition-all"
+                          >
+                              <div>
+                                  <div className="flex items-center justify-between gap-2 mb-4">
+                                      <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+                                          {project.category}
+                                      </span>
+                                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400">
+                                          <BarChart3 className="w-3.5 h-3.5" />
+                                          {project.metrics}
+                                      </span>
+                                  </div>
+
+                                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                                      {project.title}
+                                  </h3>
+                                  <p className="text-xs text-slate-400 mt-1 mb-3">{project.client}</p>
+                                  <p className="text-sm text-slate-300 leading-relaxed mb-5">
+                                      {project.description}
+                                  </p>
+                              </div>
+
+                              <div>
+                                  <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/80">
+                                      {project.tags.map((tag) => (
+                                          <span
+                                              key={tag}
+                                              className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-[11px] text-slate-400"
+                                          >
+                                              {tag}
+                                          </span>
+                                      ))}
+                                  </div>
+                              </div>
+                          </div>
+                      ))}
+                  </div>
+              </div>
+          </section>
+
+          {/* SIMULADOR INTERATIVO DE SOLUÇÃO (IA MATCHER) */}
+          <section id="diagnostico" className="py-20 bg-slate-900/30 border-b border-slate-800/60">
+              <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="rounded-3xl border border-slate-800 bg-slate-950 p-6 sm:p-10 shadow-2xl">
+                      <div className="flex items-center gap-2 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-2">
+                          <SlidersHorizontal className="w-4 h-4" />
+                          <span>Diagnóstico Rápido de Arquitetura</span>
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                          Qual é o principal gargalo da sua operação hoje?
+                      </h2>
+                      <p className="text-sm text-slate-400 mt-1 mb-8">
+                          Selecione um cenário abaixo para visualizar a arquitetura técnica recomendada pela MRS
+                          Soluções.
+                      </p>
+
+                      <div className="grid sm:grid-cols-3 gap-3 mb-8">
+                          {[
+                              {
+                                  id: 'erp',
+                                  label: 'Processos Manuais & ERP',
+                                  sub: 'Planilhas, faturas e conciliação'
+                              },
+                              {
+                                  id: 'ai',
+                                  label: 'Escala com IA & Dados',
+                                  sub: 'Atendimento, relatórios e APIs'
+                              },
+                              {
+                                  id: 'web',
+                                  label: 'Vendas & Posicionamento Web',
+                                  sub: 'Site moderno e captação de leads'
+                              }
+                          ].map((option) => (
+                              <button
+                                  key={option.id}
+                                  type="button"
+                                  onClick={() => setSelectedPain(option.id)}
+                                  className={`p-4 rounded-xl border text-left transition-all ${selectedPain === option.id
+                                          ? 'border-cyan-500 bg-cyan-500/10 text-white'
+                                          : 'border-slate-800 bg-slate-900/60 text-slate-300 hover:border-slate-700'
+                                      }`}
+                              >
+                                  <div className="font-bold text-sm">{option.label}</div>
+                                  <div className="text-xs text-slate-400 mt-1">{option.sub}</div>
+                              </button>
+                          ))}
+                      </div>
+
+                      <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-slate-900 to-slate-950 p-6 sm:p-8">
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                              <span className="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 text-xs font-semibold">
+                                  {currentRecommendation.badge}
+                              </span>
+                              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400">
+                                  <ShieldCheck className="w-4 h-4" />
+                                  {currentRecommendation.estimatedImpact}
+                              </span>
+                          </div>
+
+                          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                              {currentRecommendation.title}
+                          </h3>
+                          <p className="text-sm text-slate-300 mb-5">{currentRecommendation.summary}</p>
+
+                          <div className="space-y-2.5 mb-6">
+                              {currentRecommendation.deliverables.map((del, idx) => (
+                                  <div key={idx} className="flex items-center gap-2.5 text-sm text-slate-200">
+                                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                                      <span>{del}</span>
+                                  </div>
+                              ))}
+                          </div>
+
+                          <a
+                              href="#contato"
+                              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-all"
+                          >
+                              <span>Solicitar Proposta para este Cenário</span>
+                              <ArrowRight className="w-4 h-4" />
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          {/* INSTAGRAM FEED @mrs.solucoes */}
+          <section id="instagram" className="py-20 border-b border-slate-800/60">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+                      <div>
+                          <div className="inline-flex items-center gap-2 text-pink-400 text-xs font-bold uppercase tracking-wider">
+                              <Instagram className="w-4 h-4" />
+                              <span>Bastidores & Atualizações</span>
+                          </div>
+                          <h2 className="text-3xl font-bold text-white mt-1">
+                              Acompanhe <span className="text-cyan-400">@mrs.solucoes</span> no Instagram
+                          </h2>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                          <button
+                              type="button"
+                              onClick={handleRefreshInstagram}
+                              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-slate-700 text-xs font-semibold text-slate-300 transition-all"
+                          >
+                              <RefreshCw
+                                  className={`w-3.5 h-3.5 text-cyan-400 ${isRefreshingInsta ? 'animate-spin' : ''}`}
+                              />
+                              <span>Sincronizar Feed</span>
+                          </button>
+
+                          <a
+                              href="https://instagram.com/mrs.solucoes"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-95 text-white text-xs font-bold transition-all"
+                          >
+                              <span>Seguir @mrs.solucoes</span>
+                              <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                      </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-6">
+                      {instagramPosts.map((post) => (
+                          <div
+                              key={post.id}
+                              onClick={() => setSelectedPost(post)}
+                              className="cursor-pointer group rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-pink-500/40 overflow-hidden flex flex-col justify-between transition-all"
+                          >
+                              <div>
+                                  <div className="px-4 py-3 border-b border-slate-800/80 flex items-center justify-between">
+                                      <div className="flex items-center gap-2.5">
+                                          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-0.5">
+                                              <div className="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-[10px] font-bold text-white">
+                                                  MRS
+                                              </div>
+                                          </div>
+                                          <div>
+                                              <p className="text-xs font-bold text-white">mrs.solucoes</p>
+                                              <p className="text-[10px] text-slate-400">{post.time}</p>
+                                          </div>
+                                      </div>
+                                      <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-[10px] text-cyan-400">
+                                          {post.tag}
+                                      </span>
+                                  </div>
+
+                                  <div
+                                      className={`p-6 bg-gradient-to-br ${post.gradient} border-b border-slate-800/60 min-h-[160px] flex flex-col justify-center`}
+                                  >
+                                      <p className="text-sm text-slate-100 leading-relaxed line-clamp-4">
+                                          {post.caption}
+                                      </p>
+                                  </div>
+                              </div>
+
+                              <div className="px-4 py-3 flex items-center justify-between text-xs text-slate-400">
+                                  <div className="flex items-center gap-4">
+                                      <span className="inline-flex items-center gap-1 text-slate-300">
+                                          <Heart className="w-3.5 h-3.5 text-pink-500 fill-pink-500" />
+                                          {post.likes}
+                                      </span>
+                                      <span className="inline-flex items-center gap-1 text-slate-300">
+                                          <MessageCircle className="w-3.5 h-3.5 text-cyan-400" />
+                                          {post.comments}
+                                      </span>
+                                  </div>
+                                  <span className="text-cyan-400 group-hover:underline font-medium">
+                                      Ver publicação
+                                  </span>
+                              </div>
+                          </div>
+                      ))}
+                  </div>
+              </div>
+          </section>
+
+          {/* MODAL DE VISUALIZAÇÃO DO POST */}
+          {selectedPost && (
+              <div
+                  className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4"
+                  onClick={() => setSelectedPost(null)}
+              >
+                  <div
+                      className="max-w-lg w-full rounded-2xl bg-slate-900 border border-slate-700 p-6 shadow-2xl"
+                      onClick={(e) => e.stopPropagation()}
+                  >
+                      <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+                          <div className="flex items-center gap-2.5">
+                              <Instagram className="w-5 h-5 text-pink-400" />
+                              <span className="font-bold text-white">@mrs.solucoes</span>
+                          </div>
+                          <button
+                              type="button"
+                              onClick={() => setSelectedPost(null)}
+                              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800"
+                          >
+                              <X className="w-5 h-5" />
+                          </button>
+                      </div>
+
+                      <div className="py-5 space-y-4">
+                          <span className="inline-block px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-300 text-xs font-semibold">
+                              {selectedPost.tag}
+                          </span>
+                          <p className="text-sm text-slate-200 leading-relaxed">{selectedPost.caption}</p>
+                      </div>
+
+                      <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+                          <div className="flex items-center gap-4 text-xs text-slate-400">
+                              <span>{selectedPost.likes} curtidas</span>
+                              <span>{selectedPost.comments} comentários</span>
+                          </div>
+                          <a
+                              href="https://instagram.com/mrs.solucoes"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-pink-500 hover:bg-pink-400 text-white text-xs font-bold"
+                          >
+                              <span>Abrir no Instagram</span>
+                              <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          )}
+
+          {/* CONTATO & CONVERSÃO */}
+          <section id="contato" className="py-20">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="grid lg:grid-cols-12 gap-12">
+                      <div className="lg:col-span-5 space-y-6">
+                          <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">
+                              Vamos Conversar
+                          </span>
+                          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                              Pronto para tirar seu projeto do papel?
+                          </h2>
+                          <p className="text-slate-300 leading-relaxed">
+                              Entre em contato para alinharmos o escopo do seu site, sistema web, automação em
+                              Python ou customização Odoo 19.
+                          </p>
+
+                          <div className="space-y-3 pt-2">
+                              <a
+                                  href="https://instagram.com/mrs.solucoes"
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="flex items-center gap-3.5 p-4 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-pink-500/40 transition-all"
+                              >
+                                  <Instagram className="w-5 h-5 text-pink-400" />
+                                  <div>
+                                      <div className="text-xs text-slate-400">Instagram Oficial</div>
+                                      <div className="text-sm font-semibold text-white">@mrs.solucoes</div>
+                                  </div>
+                              </a>
+
+                              <a
+                                    href="https://github.com/MarcosVitagliano"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex items-center gap-3.5 p-4 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition-all"
+                                >
+                                    <Github className="w-5 h-5 text-cyan-400" />
+                                    <div>
+                                        <div className="text-xs text-slate-400">Repositórios & Código</div>
+                                        <div className="text-sm font-semibold text-white">
+                                            github.com/MarcosVitagliano
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="mailto:marcos.vitagliano@isy.one"
+                                    className="flex items-center gap-3.5 p-4 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/40 transition-all"
+                                >
+                                    <Mail className="w-5 h-5 text-emerald-400" />
+                                    <div>
+                                        <div className="text-xs text-slate-400">E-mail Corporativo</div>
+                                        <div className="text-sm font-semibold text-white">
+                                            marcos.vitagliano@isy.one
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="lg:col-span-7">
+                            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
+                                {formSubmitted ? (
+                                    <div className="py-12 text-center space-y-3">
+                                        <div className="w-14 h-14 rounded-full bg-emerald-500/15 text-emerald-400 flex items-center justify-center mx-auto">
+                                            <CheckCircle2 className="w-8 h-8" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white">Mensagem enviada com sucesso!</h3>
+                                        <p className="text-sm text-slate-300 max-w-md mx-auto">
+                                            Obrigado pelo contato. Em breve retornarei com uma análise inicial para o seu
+                                            projeto.
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <form onSubmit={handleFormSubmit} className="space-y-5">
+                                        <div className="grid sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                                                    Seu Nome *
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    required
+                                                    value={formData.name}
+                                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                                    placeholder="Ex: João Silva"
+                                                    className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-500"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                                                    Empresa
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    value={formData.company}
+                                                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                                                    placeholder="Nome da empresa"
+                                                    className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-500"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="grid sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                                                    E-mail ou WhatsApp *
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    required
+                                                    value={formData.email}
+                                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                                    placeholder="(11) 99999-9999 ou e-mail"
+                                                    className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-500"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                                                    Tipo de Solução
+                                                </label>
+                                                <select
+                                                    value={formData.service}
+                                                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                                                    className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-500"
+                                                >
+                                                    <option>Automação Python & IA</option>
+                                                    <option>Site / Landing Page em React</option>
+                                                    <option>Customização ERP / Odoo 19</option>
+                                                    <option>Integração de Sistemas & APIs</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                                                Detalhes do Projeto *
+                                            </label>
+                                            <textarea
+                                                rows={4}
+                                                required
+                                                value={formData.message}
+                                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                                placeholder="Descreva brevemente o objetivo ou desafio atual da sua operação..."
+                                                className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-cyan-500"
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-cyan-500/20"
+                                        >
+                                            Enviar Solicitação de Projeto
+                                        </button>
+                                    </form>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* RODAPÉ */}
+            <footer className="border-t border-slate-800/80 py-8 bg-slate-950">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                    <div>
+                        © {new Date().getFullYear()} <strong className="text-slate-200">MRS Soluções</strong> —
+                        Desenvolvido por Marcos Paulo Vitagliano.
+                    </div>
+                    <div className="flex items-center gap-5">
+                        <a
+                            href="https://instagram.com/mrs.solucoes"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:text-pink-400 transition-colors"
+                        >
+                            Instagram (@mrs.solucoes)
+                        </a>
+                        <a
+                            href="https://github.com/MarcosVitagliano"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:text-cyan-400 transition-colors"
+                        >
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    );
+}
